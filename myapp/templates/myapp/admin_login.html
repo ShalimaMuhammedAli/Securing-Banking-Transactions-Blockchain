@@ -5,29 +5,37 @@
 {% endblock %}
 {% block body %}
 <body>
-    <center>
-    <h1>Admin Login</h1>
-    <div class="container">
-    <form role="form" name="frm" method="post" action="{% url 'admin_login' %}" >
-        {% csrf_token %}
-        <div class="form-group">
-            <label for="un">User Name :</label>
-            <input class="form-control" type="text" name="un" id="un">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-lg p-4">
+                    <div class="card-body">
+                        <h1 class="text-center mb-4" style="color: #007bff;">Admin Login</h1>
+                        <form role="form" name="frm" method="post" action="{% url 'admin_login' %}">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="un" class="font-weight-bold">User Name:</label>
+                                <input class="form-control" type="text" name="un" id="un" placeholder="Enter your username">
+                            </div>
+                            <div class="form-group">
+                                <label for="pwd" class="font-weight-bold">Password:</label>
+                                <input class="form-control" type="password" name="pwd" id="pwd" placeholder="Enter your password">
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <button type="submit" class="btn btn-primary" id="bt" name="bt">Login</button>
+                                <button type="reset" class="btn btn-secondary" id="rt" name="rt">Reset</button>
+                            </div>
+                        </form>
+                        {% if msg1 %}
+                        <div class="alert alert-danger mt-3 text-center">
+                            {% autoescape off %}{{ msg1 }}{% endautoescape %}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="pwd">Password :</label>
-            <input class="form-control" type="password" name="pwd" id="pwd">
-        </div>
-        <button type="submit"
-        class="btn btn-info" id="bt" name="bt">Login</button>
-        <button type="reset"
-        class="btn btn-info" id="rt" name="rt">Reset</button>
-
-    </form>
     </div>
-        {% autoescape off %}{{ msg1 }}{% endautoescape %}
-    </center>
-
     <script src="{% static './myapp/scripts/loginscript.js' %}"></script>
 </body>
 {% endblock %}

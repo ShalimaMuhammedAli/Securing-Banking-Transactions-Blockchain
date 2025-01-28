@@ -1,12 +1,11 @@
 {% extends 'myapp/staff_base.html' %}
 {% load static %}
 {% block title %}Hello Staff{% endblock %}
-{% block background %}background="{% static './myapp/images/bank.jpg' %}"{% endblock %}
+{% block background %}background="{% static './myapp/images/emp-bg.jpg' %}"{% endblock %}
 
 {% block body %}
 <center>
-        <h2><font color="#366092">Welcome {{ uname}}</font></h2>
-         <!-- <img src="{% static './myapp/images/news.jpg' %}" width="600" height="400"> -->
-
+    <h1 style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);color: white;font-size: 4rem;">Welcome {{ uname}}</h1>
+    <!-- <img src="{% static './myapp/images/bq.jpg' %}" width="600" height="400"> -->
 </center>
 {% endblock %}
