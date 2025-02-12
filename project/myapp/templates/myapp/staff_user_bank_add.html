@@ -1,0 +1,69 @@
+{% extends 'myapp/staff_base.html' %}
+{% load static %}
+{% block title %}Account Details Add{% endblock %}
+{% block body %}
+<center>
+    <h1>Account Details Add</h1>
+     <div class="container">
+         <form role="form" name="frm" action="{% url 'staff_user_bank_add'%}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="accno">Account Number :</label>
+            <input type="text" class="form-control" type="text" name="accno" id="accno">
+        </div>
+        <div class="form-group">
+            <label for="balance">Opening Balance :</label>
+            <input type="text" class="form-control" type="text" name="balance" id="balance">
+        </div>
+        <div class="form-group">
+            <label for="bankid">Bank :</label>
+            <select class="form-control" id="bankid"  name="bankid">
+                {% for  b in bank_list%}
+                <option value="{{b.id}}">{{b.bankname}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+			<label for="fname">Name</label>
+	        <input class="form-control" type="text"  id="fname" name="fname" placeholder="First name" required="required">
+			<input class="form-control" type="text"  id="lname" name="lname" placeholder="Last name" required="required">
+		</div>
+	    <div class="form-group">
+            <label>Gender :</label>
+			<div class="custom-control custom-radio custom-control-inline">
+  				<input type="radio" class="custom-control-input" id="gender1" name="gender" value="Male" checked>
+  				<label class="custom-control-label" for="gender1">Male</label>
+			</div>
+			<div class="custom-control custom-radio custom-control-inline">
+  				<input type="radio" class="custom-control-input" id="gender2" name="gender" value="Female">
+  				<label class="custom-control-label" for="gender2">Female</label>
+			</div>
+		</div>
+        <div class="form-group">
+			<label for="contact">DOB</label>
+	        <input type="date"  class="form-control" id="dob" name="dob">
+		</div>
+
+	    <div class="form-group">
+			<label for="addr">Address</label>
+	        <input class="form-control" type="text"  id="addr1" name="addr1" placeholder="Street" >
+            <input class="form-control" type="text"  id="addr2" name="addr2" placeholder="Street" >
+            <input class="form-control" type="text"  id="addr3" name="addr3" placeholder="Street" >
+            <input type="text"  class="form-control" id="pin" name="pin" placeholder="pin" >
+		</div>
+	    <div class="form-group">
+			<label for="contact">Contact</label>
+	        <input type="text"  class="form-control" id="contact" name="contact" placeholder="Enter contact">
+		</div>
+		<div class="form-group">
+			<label for="email">Email</label>
+	        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email id"></td>
+		</div>
+        
+       <button type="submit" class="btn btn-info" id="bt" name="bt">Add</button>
+        <button type="reset" class="btn btn-info" id="rt" name="rt">Clear</button>
+    </form>
+     </div>
+    <h3>{{msg}}</h3>
+</center>
+{% endblock %}
