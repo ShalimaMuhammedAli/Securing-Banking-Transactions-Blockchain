@@ -6,11 +6,11 @@ w3 = Web3(Web3.HTTPProvider('http://localhost:7545'))
 flag = w3.is_connected()
 print(flag)
 
-buyer = '0x55772b506CA9c817117059846B62ecD4E9E9635f'
-buyer_key = '0x4b8068e76a3d26c20f7b4f41b27b0f4e9ecac7cc441953ea25f4a0fa3054feaf'
+buyer = '0x6D358E8d8Ebf515B505Ef52bcE224f91e66DF63C'
+buyer_key = '0x01aa1247c1c80849c8704f82f7ca9e1a00a4f375c1b325084d19cffa8cf555a4'
 
-seller = '0x7f8c6dc74DD2498023Cf64E2B731a9456FeA212B'
-seller_key='0xe0fefdd54277a63ec2cb758f6d8457e6d302f1b1fc74334613c7344db4f5eb13'
+seller = '0xad18A1daA22256749c3Ec998c1443b943C9BFA2A'
+seller_key='0x34e3d201cdcf345455accc1c9298a0b00a623d848e27a38117b5c21dc4c04628'
 
 flag =  w3.is_address(buyer)
 print(flag)
@@ -55,3 +55,4 @@ print(json_data)
 # txn = w3.eth.send_raw_transaction(signed_txn.raw_transaction)
 # print(txn)
 # print(w3.eth.blockNumber)
+# 
