@@ -34,3 +34,4 @@ def start_server(ip, port):
                 blockchain2.save_chain('test_block1.json')
 
 start_server('localhost', 5005)
+
