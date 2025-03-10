@@ -207,3 +207,4 @@ if __name__ == '__main__':
     # blockchain3 = Blockchain(fromFile=True)
     # val = blockchain3.load_and_check_chain('block_edited.json')
     # print(val)
+    # printt
